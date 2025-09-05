@@ -1,0 +1,5 @@
+geometry_msgs/Pose pose
+string object_id
+string object_type
+float64 confidence
+sensor_msgs/PointCloud2 object_cloud

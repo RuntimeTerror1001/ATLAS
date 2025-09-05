@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.7">
+  <world name="warehouse">
+    <physics type="ode">
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin name="ignition::gazebo::systems::Physics" filename="libignition-gazebo-physics-system.so" />
+    <plugin name="ignition::gazebo::systems::UserCommands" filename="libignition-gazebo-user-commands-system.so" />
+    <plugin name="ignition::gazebo::systems::SceneBroadcaster" filename="libignition-gazebo-scene-broadcaster-system.so" />
+
+    <scene>
+      <ambient>0.18 0.18 0.18 1</ambient>
+      <background>0.4 0.4 0.45 1</background>
+      <shadows>0</shadows>
+      <grid>false</grid>
+    </scene>
+
+    
+    
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0.0 0.0 1</normal>
+              <size>1 1</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+    </model>
+
+    
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Warehouse
+      </uri>
+      <name>warehouse</name>
+      <pose>0 0 -0.1 0 0 0</pose>
+    </include>
+
+    
+    
+
+    
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf_big
+      </uri>
+      <name>shelf_big_0</name>
+      <pose>-8.5 -13 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf_big
+      </uri>
+      <name>shelf_big_1</name>
+      <pose>6.5 -13 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf_big
+      </uri>
+      <name>shelf_big_2</name>
+      <pose>-1.5 -13 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_3</name>
+      <pose>13.5 4.5 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_4</name>
+      <pose>10 4.5 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_5</name>
+      <pose>13.5 -21 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_6</name>
+      <pose>13.5 -15 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_7</name>
+      <pose>0.4 -2 0 0 -0 0</pose>
+    </include>
+
+    
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf_big
+      </uri>
+      <name>shelf_big_3</name>
+      <pose>3.5 9.5 0 0 0 1.57</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf_big
+      </uri>
+      <name>shelf_big_4</name>
+      <pose>-1.3 18.5 0 0 0 1.57</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_0</name>
+      <pose>-10 21.5 0 0 -0 1.57</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_1</name>
+      <pose>-7 23.6 0 0 -0 1.57</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/MovAi/models/shelf
+      </uri>
+      <name>shelf_2</name>
+      <pose>-4 21.5 0 0 -0 1.57</pose>
+    </include>
+
+    
+
+    <include>
+      <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/Jersey Barrier
+      </uri>
+      <name>barrier_0</name>
+      <pose>-10.4 14.75 0 0 0 1.57</pose>
+    </include>
+    <include>
+      <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/Jersey Barrier
+      </uri>
+      <name>barrier_1</name>
+      <pose>-10.4 10.5 0 0 0 1.57</pose>
+    </include>
+    <include>
+      <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/Jersey Barrier
+      </uri>
+      <name>barrier_2</name>
+      <pose>-10.4 6.5 0 0 0 1.57</pose>
+    </include>
+    <include>
+      <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/Jersey Barrier
+      </uri>
+      <name>barrier_3</name>
+      <pose>-12.85 4.85 0 0 0 0</pose>
+    </include>
+
+    
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Chair
+      </uri>
+      <name>chair_0</name>
+      <pose>14.3 -5.5 0 0 -0 3</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Chair
+      </uri>
+      <name>chair_1</name>
+      <pose>14.3 -4 0 0 -0 -3</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/foldable_chair
+      </uri>
+      <name>fchair_0</name>
+      <pose>-11.5 6.4 0 0 -0 -1.8</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/foldable_chair
+      </uri>
+      <name>fchair1</name>
+      <pose>-14 6.5 0 0 -0 1.9</pose>
+    </include>
+    
+    
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Table
+      </uri>
+      <name>table0</name>
+      <pose>-12.7 6.5 0 0 0 0</pose>
+    </include>
+
+    
+
+    
+
+    <include>
+      <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/MaleVisitorOnPhone
+      </uri>
+      <name>Person 1 - Standing</name>
+      <pose>1 -1 0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <uri>
+      https://fuel.gazebosim.org/1.0/plateau/models/Casual female
+      </uri>
+      <name>Person 2 - Walking</name>
+      <pose>-12 15 0 0 0 0</pose>
+    </include>
+
+  <model name="desk_0"><static>1</static><pose>0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</pose><link name="desk_link"><visual name="desk_0_top_visual"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><material><ambient>0.70 0.70 0.70 1.00</ambient><diffuse>0.70 0.70 0.70 1.00</diffuse></material><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></visual><collision name="desk_0_top_collision"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></collision><visual name="desk_0_leg_-1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_0_leg_-1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_0_leg_1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_0_leg_1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><inertial><mass>5.000</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><pose>-3.0000 -3.0000 0.0000 0.0000 0.0000 -2.9998</pose></model><model name="desk_1"><static>1</static><pose>0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</pose><link name="desk_link"><visual name="desk_1_top_visual"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><material><ambient>0.70 0.70 0.70 1.00</ambient><diffuse>0.70 0.70 0.70 1.00</diffuse></material><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></visual><collision name="desk_1_top_collision"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></collision><visual name="desk_1_leg_-1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_1_leg_-1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_1_leg_1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_1_leg_1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><inertial><mass>5.000</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><pose>3.0000 -3.0000 0.0000 0.0000 0.0000 -0.2407</pose></model><model name="desk_2"><static>1</static><pose>0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</pose><link name="desk_link"><visual name="desk_2_top_visual"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><material><ambient>0.70 0.70 0.70 1.00</ambient><diffuse>0.70 0.70 0.70 1.00</diffuse></material><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></visual><collision name="desk_2_top_collision"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></collision><visual name="desk_2_leg_-1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_2_leg_-1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_2_leg_1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_2_leg_1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><inertial><mass>5.000</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><pose>3.0000 3.0000 0.0000 0.0000 0.0000 -2.0857</pose></model><model name="desk_3"><static>1</static><pose>0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</pose><link name="desk_link"><visual name="desk_3_top_visual"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><material><ambient>0.70 0.70 0.70 1.00</ambient><diffuse>0.70 0.70 0.70 1.00</diffuse></material><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></visual><collision name="desk_3_top_collision"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></collision><visual name="desk_3_leg_-1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_3_leg_-1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_3_leg_1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_3_leg_1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><inertial><mass>5.000</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><pose>-3.0000 3.0000 0.0000 0.0000 0.0000 -2.4059</pose></model><model name="desk_4"><static>1</static><pose>0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</pose><link name="desk_link"><visual name="desk_4_top_visual"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><material><ambient>0.70 0.70 0.70 1.00</ambient><diffuse>0.70 0.70 0.70 1.00</diffuse></material><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></visual><collision name="desk_4_top_collision"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></collision><visual name="desk_4_leg_-1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_4_leg_-1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_4_leg_1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_4_leg_1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><inertial><mass>5.000</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><pose>0.0000 -2.0000 0.0000 0.0000 0.0000 -2.7712</pose></model><model name="desk_5"><static>1</static><pose>0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</pose><link name="desk_link"><visual name="desk_5_top_visual"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><material><ambient>0.70 0.70 0.70 1.00</ambient><diffuse>0.70 0.70 0.70 1.00</diffuse></material><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></visual><collision name="desk_5_top_collision"><geometry><box><size>1.200 0.600 0.050</size></box></geometry><pose>0.0000 0.0000 0.7550 0.0000 0.0000 0.0000</pose></collision><visual name="desk_5_leg_-1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_5_leg_-1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>-0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_5_leg_1_-1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 -0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><visual name="desk_5_leg_1_1_visual"><geometry><box><size>0.050 0.050 0.760</size></box></geometry><material><ambient>0.40 0.40 0.40 1.00</ambient><diffuse>0.40 0.40 0.40 1.00</diffuse></material><pose>0.5750 0.2750 0.3800 0.0000 0.0000 0.0000</pose></visual><inertial><mass>5.000</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><pose>0.0000 2.0000 0.0000 0.0000 0.0000 1.6854</pose></model><model name="obj_box_0"><static>0</static><pose>0.4084 0.0471 0.9916 0.0000 0.0000 -0.8880</pose><link name="link"><visual name="obj_box_0_visual"><geometry><box><size>0.193 0.116 0.083</size></box></geometry><material><ambient>0.29 0.37 0.94 1.00</ambient><diffuse>0.29 0.37 0.94 1.00</diffuse></material></visual><collision name="obj_box_0_collision"><geometry><box><size>0.193 0.116 0.083</size></box></geometry></collision><inertial><mass>0.374</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_L_1"><static>0</static><pose>-0.0145 0.3396 1.2790 0.0000 0.0000 -1.0742</pose><link name="linkA"><visual name="obj_L_1_A_visual"><geometry><box><size>0.068 0.083 0.058</size></box></geometry><material><ambient>0.81 0.26 0.94 1.00</ambient><diffuse>0.81 0.26 0.94 1.00</diffuse></material></visual><collision name="obj_L_1_A_collision"><geometry><box><size>0.068 0.083 0.058</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="linkB"><visual name="obj_L_1_B_visual"><geometry><box><size>0.068 0.102 0.058</size></box></geometry><material><ambient>0.81 0.26 0.94 1.00</ambient><diffuse>0.81 0.26 0.94 1.00</diffuse></material></visual><collision name="obj_L_1_B_collision"><geometry><box><size>0.068 0.102 0.058</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><pose>0.0850 0.0000 0.0000 0.0000 0.0000 0.0000</pose></link><joint name="obj_L_1_fixed" type="fixed"><parent>linkA</parent><child>linkB</child></joint></model><model name="obj_L_2"><static>0</static><pose>-0.3084 0.3435 1.2960 0.0000 0.0000 -1.6410</pose><link name="linkA"><visual name="obj_L_2_A_visual"><geometry><box><size>0.111 0.068 0.092</size></box></geometry><material><ambient>0.58 0.82 0.98 1.00</ambient><diffuse>0.58 0.82 0.98 1.00</diffuse></material></visual><collision name="obj_L_2_A_collision"><geometry><box><size>0.111 0.068 0.092</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="linkB"><visual name="obj_L_2_B_visual"><geometry><box><size>0.111 0.057 0.092</size></box></geometry><material><ambient>0.58 0.82 0.98 1.00</ambient><diffuse>0.58 0.82 0.98 1.00</diffuse></material></visual><collision name="obj_L_2_B_collision"><geometry><box><size>0.111 0.057 0.092</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><pose>0.0838 0.0000 0.0000 0.0000 0.0000 0.0000</pose></link><joint name="obj_L_2_fixed" type="fixed"><parent>linkA</parent><child>linkB</child></joint></model><model name="obj_L_3"><static>0</static><pose>0.1648 0.4589 1.3085 0.0000 0.0000 -0.6620</pose><link name="linkA"><visual name="obj_L_3_A_visual"><geometry><box><size>0.087 0.069 0.117</size></box></geometry><material><ambient>0.80 0.39 0.94 1.00</ambient><diffuse>0.80 0.39 0.94 1.00</diffuse></material></visual><collision name="obj_L_3_A_collision"><geometry><box><size>0.087 0.069 0.117</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="linkB"><visual name="obj_L_3_B_visual"><geometry><box><size>0.087 0.073 0.117</size></box></geometry><material><ambient>0.80 0.39 0.94 1.00</ambient><diffuse>0.80 0.39 0.94 1.00</diffuse></material></visual><collision name="obj_L_3_B_collision"><geometry><box><size>0.087 0.073 0.117</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><pose>0.0805 0.0000 0.0000 0.0000 0.0000 0.0000</pose></link><joint name="obj_L_3_fixed" type="fixed"><parent>linkA</parent><child>linkB</child></joint></model><model name="obj_cyl_4"><static>0</static><pose>-0.2833 -0.4864 1.5809 0.0000 0.0000 1.8573</pose><link name="link"><visual name="obj_cyl_4_visual"><geometry><cylinder><radius>0.096</radius><length>0.062</length></cylinder></geometry><material><ambient>0.45 0.82 1.00 1.00</ambient><diffuse>0.45 0.82 1.00 1.00</diffuse></material></visual><collision name="obj_cyl_4_collision"><geometry><cylinder><radius>0.096</radius><length>0.062</length></cylinder></geometry></collision><inertial><mass>0.361</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_5"><static>0</static><pose>0.4856 -0.0819 1.0371 0.0000 0.0000 -1.3965</pose><link name="link"><visual name="obj_box_5_visual"><geometry><box><size>0.149 0.248 0.174</size></box></geometry><material><ambient>0.31 0.32 0.92 1.00</ambient><diffuse>0.31 0.32 0.92 1.00</diffuse></material></visual><collision name="obj_box_5_collision"><geometry><box><size>0.149 0.248 0.174</size></box></geometry></collision><inertial><mass>1.288</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_6"><static>0</static><pose>-0.3337 0.4126 1.5754 0.0000 0.0000 0.0656</pose><link name="link"><visual name="obj_box_6_visual"><geometry><box><size>0.197 0.196 0.051</size></box></geometry><material><ambient>0.36 0.54 0.96 1.00</ambient><diffuse>0.36 0.54 0.96 1.00</diffuse></material></visual><collision name="obj_box_6_collision"><geometry><box><size>0.197 0.196 0.051</size></box></geometry></collision><inertial><mass>0.394</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_L_7"><static>0</static><pose>-0.4341 0.0908 0.8068 0.0000 0.0000 0.2148</pose><link name="linkA"><visual name="obj_L_7_A_visual"><geometry><box><size>0.161 0.074 0.114</size></box></geometry><material><ambient>0.38 0.20 0.94 1.00</ambient><diffuse>0.38 0.20 0.94 1.00</diffuse></material></visual><collision name="obj_L_7_A_collision"><geometry><box><size>0.161 0.074 0.114</size></box></geometry></collision><inertial><mass>0.271</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="linkB"><visual name="obj_L_7_B_visual"><geometry><box><size>0.161 0.102 0.114</size></box></geometry><material><ambient>0.38 0.20 0.94 1.00</ambient><diffuse>0.38 0.20 0.94 1.00</diffuse></material></visual><collision name="obj_L_7_B_collision"><geometry><box><size>0.161 0.102 0.114</size></box></geometry></collision><inertial><mass>0.372</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><pose>0.1313 0.0000 0.0000 0.0000 0.0000 0.0000</pose></link><joint name="obj_L_7_fixed" type="fixed"><parent>linkA</parent><child>linkB</child></joint></model><model name="obj_box_8"><static>0</static><pose>0.2922 -0.4316 1.6085 0.0000 0.0000 -2.0180</pose><link name="link"><visual name="obj_box_8_visual"><geometry><box><size>0.205 0.232 0.117</size></box></geometry><material><ambient>0.46 0.60 1.00 1.00</ambient><diffuse>0.46 0.60 1.00 1.00</diffuse></material></visual><collision name="obj_box_8_collision"><geometry><box><size>0.205 0.232 0.117</size></box></geometry></collision><inertial><mass>1.114</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_L_9"><static>0</static><pose>-0.4188 -0.4200 1.0060 0.0000 0.0000 -1.1816</pose><link name="linkA"><visual name="obj_L_9_A_visual"><geometry><box><size>0.068 0.126 0.112</size></box></geometry><material><ambient>0.68 0.56 0.96 1.00</ambient><diffuse>0.68 0.56 0.96 1.00</diffuse></material></visual><collision name="obj_L_9_A_collision"><geometry><box><size>0.068 0.126 0.112</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="linkB"><visual name="obj_L_9_B_visual"><geometry><box><size>0.068 0.068 0.112</size></box></geometry><material><ambient>0.68 0.56 0.96 1.00</ambient><diffuse>0.68 0.56 0.96 1.00</diffuse></material></visual><collision name="obj_L_9_B_collision"><geometry><box><size>0.068 0.068 0.112</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><pose>0.0681 0.0000 0.0000 0.0000 0.0000 0.0000</pose></link><joint name="obj_L_9_fixed" type="fixed"><parent>linkA</parent><child>linkB</child></joint></model><model name="obj_cyl_10"><static>0</static><pose>-0.3075 0.2149 0.8038 0.0000 0.0000 -1.0834</pose><link name="link"><visual name="obj_cyl_10_visual"><geometry><cylinder><radius>0.115</radius><length>0.108</length></cylinder></geometry><material><ambient>0.67 0.24 0.99 1.00</ambient><diffuse>0.67 0.24 0.99 1.00</diffuse></material></visual><collision name="obj_cyl_10_collision"><geometry><cylinder><radius>0.115</radius><length>0.108</length></cylinder></geometry></collision><inertial><mass>0.893</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_cyl_11"><static>0</static><pose>-0.0750 0.0293 1.0067 0.0000 0.0000 1.8866</pose><link name="link"><visual name="obj_cyl_11_visual"><geometry><cylinder><radius>0.060</radius><length>0.113</length></cylinder></geometry><material><ambient>0.75 0.81 0.98 1.00</ambient><diffuse>0.75 0.81 0.98 1.00</diffuse></material></visual><collision name="obj_cyl_11_collision"><geometry><cylinder><radius>0.060</radius><length>0.113</length></cylinder></geometry></collision><inertial><mass>0.252</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_L_12"><static>0</static><pose>-0.4879 0.1597 0.9901 0.0000 0.0000 2.2413</pose><link name="linkA"><visual name="obj_L_12_A_visual"><geometry><box><size>0.139 0.065 0.080</size></box></geometry><material><ambient>0.47 0.48 0.91 1.00</ambient><diffuse>0.47 0.48 0.91 1.00</diffuse></material></visual><collision name="obj_L_12_A_collision"><geometry><box><size>0.139 0.065 0.080</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="linkB"><visual name="obj_L_12_B_visual"><geometry><box><size>0.139 0.103 0.080</size></box></geometry><material><ambient>0.47 0.48 0.91 1.00</ambient><diffuse>0.47 0.48 0.91 1.00</diffuse></material></visual><collision name="obj_L_12_B_collision"><geometry><box><size>0.139 0.103 0.080</size></box></geometry></collision><inertial><mass>0.230</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><pose>0.1210 0.0000 0.0000 0.0000 0.0000 0.0000</pose></link><joint name="obj_L_12_fixed" type="fixed"><parent>linkA</parent><child>linkB</child></joint></model><model name="obj_cyl_13"><static>0</static><pose>0.1604 0.0628 1.5927 0.0000 0.0000 0.2221</pose><link name="link"><visual name="obj_cyl_13_visual"><geometry><cylinder><radius>0.041</radius><length>0.085</length></cylinder></geometry><material><ambient>0.64 0.24 0.91 1.00</ambient><diffuse>0.64 0.24 0.91 1.00</diffuse></material></visual><collision name="obj_cyl_13_collision"><geometry><cylinder><radius>0.041</radius><length>0.085</length></cylinder></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_14"><static>0</static><pose>0.1789 0.4730 1.2912 0.0000 0.0000 -0.6233</pose><link name="link"><visual name="obj_box_14_visual"><geometry><box><size>0.207 0.168 0.082</size></box></geometry><material><ambient>0.35 0.31 0.93 1.00</ambient><diffuse>0.35 0.31 0.93 1.00</diffuse></material></visual><collision name="obj_box_14_collision"><geometry><box><size>0.207 0.168 0.082</size></box></geometry></collision><inertial><mass>0.572</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_15"><static>0</static><pose>-0.3541 -0.4543 0.8023 0.0000 0.0000 -2.9922</pose><link name="link"><visual name="obj_box_15_visual"><geometry><box><size>0.195 0.197 0.105</size></box></geometry><material><ambient>0.24 0.20 0.92 1.00</ambient><diffuse>0.24 0.20 0.92 1.00</diffuse></material></visual><collision name="obj_box_15_collision"><geometry><box><size>0.195 0.197 0.105</size></box></geometry></collision><inertial><mass>0.804</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_cyl_16"><static>0</static><pose>-0.3725 0.0550 1.0029 0.0000 0.0000 -1.1413</pose><link name="link"><visual name="obj_cyl_16_visual"><geometry><cylinder><radius>0.099</radius><length>0.106</length></cylinder></geometry><material><ambient>0.27 0.45 0.90 1.00</ambient><diffuse>0.27 0.45 0.90 1.00</diffuse></material></visual><collision name="obj_cyl_16_collision"><geometry><cylinder><radius>0.099</radius><length>0.106</length></cylinder></geometry></collision><inertial><mass>0.648</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_17"><static>0</static><pose>-0.2964 0.5690 1.6305 0.0000 0.0000 1.5793</pose><link name="link"><visual name="obj_box_17_visual"><geometry><box><size>0.088 0.249 0.161</size></box></geometry><material><ambient>0.81 0.63 0.91 1.00</ambient><diffuse>0.81 0.63 0.91 1.00</diffuse></material></visual><collision name="obj_box_17_collision"><geometry><box><size>0.088 0.249 0.161</size></box></geometry></collision><inertial><mass>0.708</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_18"><static>0</static><pose>-0.0615 -0.5381 1.6099 0.0000 0.0000 0.3314</pose><link name="link"><visual name="obj_box_18_visual"><geometry><box><size>0.242 0.211 0.120</size></box></geometry><material><ambient>0.38 0.44 0.94 1.00</ambient><diffuse>0.38 0.44 0.94 1.00</diffuse></material></visual><collision name="obj_box_18_collision"><geometry><box><size>0.242 0.211 0.120</size></box></geometry></collision><inertial><mass>1.224</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_19"><static>0</static><pose>-0.4868 0.5129 0.8227 0.0000 0.0000 1.0511</pose><link name="link"><visual name="obj_box_19_visual"><geometry><box><size>0.163 0.217 0.145</size></box></geometry><material><ambient>0.29 0.79 1.00 1.00</ambient><diffuse>0.29 0.79 1.00 1.00</diffuse></material></visual><collision name="obj_box_19_collision"><geometry><box><size>0.163 0.217 0.145</size></box></geometry></collision><inertial><mass>1.027</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_20"><static>0</static><pose>0.1921 -0.2808 0.8004 0.0000 0.0000 0.8688</pose><link name="link"><visual name="obj_box_20_visual"><geometry><box><size>0.246 0.216 0.101</size></box></geometry><material><ambient>0.53 0.54 0.91 1.00</ambient><diffuse>0.53 0.54 0.91 1.00</diffuse></material></visual><collision name="obj_box_20_collision"><geometry><box><size>0.246 0.216 0.101</size></box></geometry></collision><inertial><mass>1.070</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_cyl_21"><static>0</static><pose>-0.3532 0.2564 0.8139 0.0000 0.0000 -0.5206</pose><link name="link"><visual name="obj_cyl_21_visual"><geometry><cylinder><radius>0.041</radius><length>0.128</length></cylinder></geometry><material><ambient>0.27 0.44 0.93 1.00</ambient><diffuse>0.27 0.44 0.93 1.00</diffuse></material></visual><collision name="obj_cyl_21_collision"><geometry><cylinder><radius>0.041</radius><length>0.128</length></cylinder></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_22"><static>0</static><pose>0.4814 0.2802 0.8249 0.0000 0.0000 0.9503</pose><link name="link"><visual name="obj_box_22_visual"><geometry><box><size>0.204 0.180 0.150</size></box></geometry><material><ambient>0.78 0.31 0.90 1.00</ambient><diffuse>0.78 0.31 0.90 1.00</diffuse></material></visual><collision name="obj_box_22_collision"><geometry><box><size>0.204 0.180 0.150</size></box></geometry></collision><inertial><mass>1.099</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="obj_box_23"><static>0</static><pose>-0.0513 -0.5546 0.9759 0.0000 0.0000 -1.9523</pose><link name="link"><visual name="obj_box_23_visual"><geometry><box><size>0.098 0.170 0.052</size></box></geometry><material><ambient>0.87 0.57 0.91 1.00</ambient><diffuse>0.87 0.57 0.91 1.00</diffuse></material></visual><collision name="obj_box_23_collision"><geometry><box><size>0.098 0.170 0.052</size></box></geometry></collision><inertial><mass>0.200</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link></model><model name="realsense_mount_0"><static>1</static><pose>0.1000 0.0000 1.6000 0.0000 0.0000 0.0000</pose><link name="bracket_link"><visual name="realsense_mount_0_wall_plate_visual"><geometry><box><size>0.150 0.020 0.120</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.0000 -0.0100 0.0600 0.0000 0.0000 0.0000</pose></visual><visual name="realsense_mount_0_arm_visual"><geometry><box><size>0.250 0.030 0.030</size></box></geometry><material><ambient>0.25 0.25 0.25 1.00</ambient><diffuse>0.25 0.25 0.25 1.00</diffuse></material><pose>0.1200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_0_arm_col_collision"><geometry><box><size>0.250 0.030 0.030</size></box></geometry></collision><inertial><mass>0.500</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="camera_link"><visual name="realsense_mount_0_body_visual"><geometry><box><size>0.120 0.025 0.025</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_0_body_col_collision"><geometry><box><size>0.120 0.025 0.025</size></box></geometry></collision><inertial><mass>0.100</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><sensor name="realsense_mount_0_rgbd" type="rgbd_camera"><update_rate>30</update_rate><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose><camera><horizontal_fov>1.204277</horizontal_fov><image><width>848</width><height>480</height><format>R8G8B8</format></image><clip><near>0.1</near><far>50.0</far></clip></camera><range><min>0.2</min><max>10.0</max></range><noise><type>gaussian</type><mean>0.0</mean><stddev>0.002</stddev></noise></sensor><sensor name="realsense_mount_0_imu" type="imu"><update_rate>200</update_rate></sensor></link><joint name="realsense_mount_0_fixed" type="fixed"><parent>bracket_link</parent><child>camera_link</child></joint></model><model name="realsense_mount_1"><static>1</static><pose>0.1000 0.0000 1.6000 0.0000 0.0000 0.0000</pose><link name="bracket_link"><visual name="realsense_mount_1_wall_plate_visual"><geometry><box><size>0.150 0.020 0.120</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.0000 -0.0100 0.0600 0.0000 0.0000 0.0000</pose></visual><visual name="realsense_mount_1_arm_visual"><geometry><box><size>0.250 0.030 0.030</size></box></geometry><material><ambient>0.25 0.25 0.25 1.00</ambient><diffuse>0.25 0.25 0.25 1.00</diffuse></material><pose>0.1200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_1_arm_col_collision"><geometry><box><size>0.250 0.030 0.030</size></box></geometry></collision><inertial><mass>0.500</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="camera_link"><visual name="realsense_mount_1_body_visual"><geometry><box><size>0.120 0.025 0.025</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_1_body_col_collision"><geometry><box><size>0.120 0.025 0.025</size></box></geometry></collision><inertial><mass>0.100</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><sensor name="realsense_mount_1_rgbd" type="rgbd_camera"><update_rate>30</update_rate><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose><camera><horizontal_fov>1.204277</horizontal_fov><image><width>848</width><height>480</height><format>R8G8B8</format></image><clip><near>0.1</near><far>50.0</far></clip></camera><range><min>0.2</min><max>10.0</max></range><noise><type>gaussian</type><mean>0.0</mean><stddev>0.002</stddev></noise></sensor><sensor name="realsense_mount_1_imu" type="imu"><update_rate>200</update_rate></sensor></link><joint name="realsense_mount_1_fixed" type="fixed"><parent>bracket_link</parent><child>camera_link</child></joint></model><model name="realsense_mount_2"><static>1</static><pose>0.1000 0.0000 1.6000 0.0000 0.0000 0.0000</pose><link name="bracket_link"><visual name="realsense_mount_2_wall_plate_visual"><geometry><box><size>0.150 0.020 0.120</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.0000 -0.0100 0.0600 0.0000 0.0000 0.0000</pose></visual><visual name="realsense_mount_2_arm_visual"><geometry><box><size>0.250 0.030 0.030</size></box></geometry><material><ambient>0.25 0.25 0.25 1.00</ambient><diffuse>0.25 0.25 0.25 1.00</diffuse></material><pose>0.1200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_2_arm_col_collision"><geometry><box><size>0.250 0.030 0.030</size></box></geometry></collision><inertial><mass>0.500</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="camera_link"><visual name="realsense_mount_2_body_visual"><geometry><box><size>0.120 0.025 0.025</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_2_body_col_collision"><geometry><box><size>0.120 0.025 0.025</size></box></geometry></collision><inertial><mass>0.100</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><sensor name="realsense_mount_2_rgbd" type="rgbd_camera"><update_rate>30</update_rate><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose><camera><horizontal_fov>1.204277</horizontal_fov><image><width>848</width><height>480</height><format>R8G8B8</format></image><clip><near>0.1</near><far>50.0</far></clip></camera><range><min>0.2</min><max>10.0</max></range><noise><type>gaussian</type><mean>0.0</mean><stddev>0.002</stddev></noise></sensor><sensor name="realsense_mount_2_imu" type="imu"><update_rate>200</update_rate></sensor></link><joint name="realsense_mount_2_fixed" type="fixed"><parent>bracket_link</parent><child>camera_link</child></joint></model><model name="realsense_mount_3"><static>1</static><pose>0.1000 0.0000 1.6000 0.0000 0.0000 0.0000</pose><link name="bracket_link"><visual name="realsense_mount_3_wall_plate_visual"><geometry><box><size>0.150 0.020 0.120</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.0000 -0.0100 0.0600 0.0000 0.0000 0.0000</pose></visual><visual name="realsense_mount_3_arm_visual"><geometry><box><size>0.250 0.030 0.030</size></box></geometry><material><ambient>0.25 0.25 0.25 1.00</ambient><diffuse>0.25 0.25 0.25 1.00</diffuse></material><pose>0.1200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_3_arm_col_collision"><geometry><box><size>0.250 0.030 0.030</size></box></geometry></collision><inertial><mass>0.500</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial></link><link name="camera_link"><visual name="realsense_mount_3_body_visual"><geometry><box><size>0.120 0.025 0.025</size></box></geometry><material><ambient>0.20 0.20 0.20 1.00</ambient><diffuse>0.20 0.20 0.20 1.00</diffuse></material><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose></visual><collision name="realsense_mount_3_body_col_collision"><geometry><box><size>0.120 0.025 0.025</size></box></geometry></collision><inertial><mass>0.100</mass><inertia><ixx>0.010000</ixx><iyy>0.010000</iyy><izz>0.010000</izz><ixy>0.000000</ixy><ixz>0.000000</ixz><iyz>0.000000</iyz></inertia></inertial><sensor name="realsense_mount_3_rgbd" type="rgbd_camera"><update_rate>30</update_rate><pose>0.2200 0.0000 0.0600 0.0000 0.0000 0.0000</pose><camera><horizontal_fov>1.204277</horizontal_fov><image><width>848</width><height>480</height><format>R8G8B8</format></image><clip><near>0.1</near><far>50.0</far></clip></camera><range><min>0.2</min><max>10.0</max></range><noise><type>gaussian</type><mean>0.0</mean><stddev>0.002</stddev></noise></sensor><sensor name="realsense_mount_3_imu" type="imu"><update_rate>200</update_rate></sensor></link><joint name="realsense_mount_3_fixed" type="fixed"><parent>bracket_link</parent><child>camera_link</child></joint></model><light name="sun_main" type="directional"><pose>0.0000 0.0000 10.0000 0.3000 0.2000 0.0000</pose><diffuse>0.55 0.55 0.55 1</diffuse><specular>0.2 0.2 0.2 1</specular><cast_shadows>1</cast_shadows><attenuation><range>80.00</range><constant>1.0000</constant><linear>0.0200</linear><quadratic>0.003000</quadratic></attenuation><direction>-0.2 0 -1</direction></light><light name="wall_fill" type="point"><pose>0.0000 3.0000 2.2000 0.0000 0.0000 0.0000</pose><diffuse>0.4 0.4 0.6 1</diffuse><specular>0.1 0.1 0.1 1</specular><cast_shadows>0</cast_shadows><attenuation><range>8.00</range><constant>1.0000</constant><linear>0.0800</linear><quadratic>0.010000</quadratic></attenuation></light></world>
+</sdf>
