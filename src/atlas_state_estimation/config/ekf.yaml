@@ -1,0 +1,122 @@
+/**:
+  ros__parameters:
+    # Core EKF Parameters
+    frequency: 50.0 # Filter update rate (Hz)
+    sensor_timeout: 0.1 
+    two_d_mode: false
+
+    # Frame Configuration
+    #map_frame: map 
+    odom_frame: robot_odom 
+    base_link_frame: robot_base_footprint 
+    world_frame: robot_odom
+
+    # Transform publishing
+    publish_tf: true
+    publish_acceleration: false
+
+    # Process Noise Covariance (15x15 diagonal)
+    # Order: x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az 
+    process_noise_covariance: [
+      0.05,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.05,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.06,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.03,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.03,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.06,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.025, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.025, 0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.04,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.02,  0.0,   0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,
+      0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.015
+    ]
+
+    # Initial Estimate Covariance (15x15 diagonal)
+    initial_estimate_covariance: [
+      1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # X
+      0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Y
+      0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Z
+      0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Roll
+      0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Pitch
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Yaw
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Vx
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Vy
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,  # Vz
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0,  # Vroll
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0,  # Vpitch
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0,  # Vyaw
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0,  # Ax
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0,  # Ay
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5   # Az
+    ]
+
+    # IMU Configuration (imu0)
+    imu0: /atlas/imu
+    imu0_config: [false, false, false,  # x, y, z position (don't use from IMU)
+                  true, true, true, # roll, pitch, yaw orientation
+                  false, false, false, # x, y, z velocity
+                  true, true, true, # roll, pitch, yaw angular velocity
+                  false, false, false] # x, y, z linear acceleration
+    imu0_nodelay: false
+    imu0_differential: false
+    imu0_relative: false
+    imu0_queue_size: 10
+    imu0_remove_gravitational_acceleration: true
+
+    # Wheel Odometry Configuration (odom0)
+    odom0: /atlas/robotnik_base_controller/odometry
+    odom0_config: [false,  false,  false,  # x, y position (use), z (ignore for wheeled robot)
+                   false, false, false,   # roll, pitch (ignore), yaw (use)
+                   true,  true,  false,  # x, y velocity (use), z velocity (ignore)
+                   false, false, true,   # roll, pitch angular velocity (ignore), yaw (use)
+                   false, false, false]  # linear acceleration (don't use from odometry)
+    odom0_nodelay: false
+    odom0_differential: false
+    odom0_relative: false
+    odom0_queue_size: 2     
+
+    # Future sensor placeholders (uncomment and configure when available)
+    
+    # Visual Odometry (to be added later)
+    # odom1: /atlas/vo
+    # odom1_config: [true,  true,  true,   # Use x, y, z position
+    #                true,  true,  true,   # Use roll, pitch, yaw
+    #                false, false, false,  # Don't use velocities
+    #                false, false, false,  # Don't use angular velocities
+    #                false, false, false]  # Don't use accelerations
+    # odom1_differential: false
+    # odom1_relative: true
+    
+    # Lidar-Inertial Odometry (to be added later)
+    # odom2: /atlas/lio/odom
+    # odom2_config: [true,  true,  true,   # Use x, y, z position
+    #                true,  true,  true,   # Use roll, pitch, yaw  
+    #                true,  true,  true,   # Use x, y, z velocities
+    #                false, false, false,  # Don't use angular velocities (IMU provides)
+    #                false, false, false]  # Don't use accelerations (IMU provides)
+    # odom2_differential: false
+    # odom2_relative: true
+    
+    # Debug and Tuning
+    print_diagnostics: true             # Enable diagnostic output
+    debug: true                      # Set to true for verbose debugging
+    debug_out_file: /tmp/debug_ekf_localization.txt
+    
+    # Smoothing and Prediction
+    smooth_lagged_data: true           # Smooth out-of-order measurements
+    history_length: 300.0               # Keep 6 seconds of history at 50Hz
+    
+    # Advanced Parameters (Only for UKF; Harmless for EKF)
+    alpha: 0.001                       # Small alpha for numerical stability
+    kappa: 0.0                        # Kappa parameter for unscented transform
+    beta: 2.0                         # Beta parameter for unscented transform
+    
+    # Rejection Thresholds (Mahalanobis distance)
+    imu0_pose_rejection_threshold: 5.0      # Reject IMU pose updates beyond this threshold
+    imu0_twist_rejection_threshold: 5.0     # Reject IMU twist updates beyond this threshold  
+    odom0_pose_rejection_threshold: 5.0     # Reject odom pose updates beyond this threshold
+    odom0_twist_rejection_threshold: 5.0    # Reject odom twist updates beyond this threshold          

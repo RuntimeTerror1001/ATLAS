@@ -114,6 +114,9 @@ def generate_launch_description():
         name="parameter_bridge",
         output="screen",
         arguments=[
+            # Clock
+            '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
+
             # Model Cameras
             '/atlas/front_camera_color/color/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image',
             '/atlas/front_camera_color/color/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
