@@ -165,7 +165,7 @@ def generate_launch_description():
             ('/world/warehouse/model/atlas_robot/link/robot_base_footprint/sensor/front_camera_depth/depth_image/points', '/atlas/front_camera/depth/points'),
             
             ('/world/warehouse/model/atlas_robot/link/robot_base_footprint/sensor/front_laser/scan', '/atlas/front_lidar/scan'),
-            ('/world/warehouse/model/atlas_robot/link/robot_base_footprint/sensor/front_laser/scan/points', '/atlas/front_lidar/points'),
+            # ('/world/warehouse/model/atlas_robot/link/robot_base_footprint/sensor/front_laser/scan/points', '/atlas/front_lidar/points'),
             ('/world/warehouse/model/atlas_robot/link/robot_base_footprint/sensor/rear_laser/scan', '/atlas/rear_lidar/scan'),
             ('/world/warehouse/model/atlas_robot/link/robot_base_footprint/sensor/rear_laser/scan/points', '/atlas/rear_lidar/points'),
             
@@ -194,42 +194,7 @@ def generate_launch_description():
             ('/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/points', '/warehouse/camera_3/depth/points'),
         ]
     )
-    """
-/clock
-/gazebo/resource_paths
-/gui/camera/pose
-/sensors/marker
-/stats
-/world/warehouse/clock
-/world/warehouse/dynamic_pose/info
-
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_imu/imu
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/camera_info
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/depth_image
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/image
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/points
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_imu/imu
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/camera_info
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/depth_image
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/image
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/points
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_imu/imu
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/camera_info
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/depth_image
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/image
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/points
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_imu/imu
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/camera_info
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/depth_image
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/image
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/points
-/world/warehouse/pose/info
-/world/warehouse/scene/deletion
-/world/warehouse/scene/info
-/world/warehouse/state
-/world/warehouse/stats
-
-    """
+    
     # ---------------- Controller spawners ----------------
     # Controller manager lives under the same namespace as the robot nodes.
     manager_path = [TextSubstitution(text="/"), namespace, TextSubstitution(text="/controller_manager")]

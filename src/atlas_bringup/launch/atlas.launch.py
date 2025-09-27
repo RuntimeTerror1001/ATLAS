@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction 
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction, TimerAction 
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
@@ -11,6 +11,7 @@ def generate_launch_description():
     # Package paths
     atlas_bringup_share = get_package_share_directory('atlas_bringup')
     atlas_state_estimation_share = get_package_share_directory('atlas_state_estimation')
+    atlas_slam_share = get_package_share_directory('atlas_slam')
     
     # Launch arguments
     sim_arg = DeclareLaunchArgument(
@@ -86,6 +87,19 @@ def generate_launch_description():
             )
         ]
     )
+
+    # 3. SLAM Launch
+    slam_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([atlas_slam_share, 'launch', 'slam_lio.launch.py'])
+        ),
+        launch_arguments={
+            'rviz': LaunchConfiguration('rviz'),
+            'base_frame': LaunchConfiguration('base_frame')
+        }.items()
+    )
+
+    slam_launch_delayed = TimerAction(period=8.0, actions=[slam_launch])
     
     # Future launch includes (commented for now):
     
@@ -137,6 +151,7 @@ def generate_launch_description():
         # Launch includes
         sim_launch,                    # Phase 1: Simulation
         state_estimation_group,        # Phase 2: State Estimation
+        slam_launch_delayed
         # navigation_launch,           # Phase 3: Navigation (future)
         # manipulation_launch,         # Phase 4: Manipulation (future)  
         # perception_launch,           # Phase 5: Perception (future)

@@ -2,9 +2,12 @@
 build/
 install/
 log/
+
 src/gz_ros2_control/
 src/robotnik_common/
 src/robotnik_sensors/
 src/robotnik_description/
 src/ros2_robotiq_gripper/
 src/Universal_Robots_ROS2_Description
+src/LIO-SAM
+src/ros2_orb_slam3

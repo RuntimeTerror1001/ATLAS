@@ -2,13 +2,20 @@
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Imu
+from rclpy.qos import DurabilityPolicy, HistoryPolicy, ReliabilityPolicy, QoSProfile
 
 class ImuCovarianceFixerNode(Node):
     def __init__(self):
         super().__init__('imu_covariance_fixer')
 
+        sensor_data_qos = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=5
+        )
         # Create publisher
-        self.publisher = self.create_publisher(Imu, '/atlas/imu', 10)
+        self.publisher = self.create_publisher(Imu, '/atlas/imu', sensor_data_qos)
 
         # Create subscriber
         self.subscriber = self.create_subscription(Imu, '/atlas/imu/data', self.listener_cb, 10)
@@ -19,8 +26,8 @@ class ImuCovarianceFixerNode(Node):
         new_msg = msg
 
         # Orientation Covariance (roll, pitch, yaw)
-        new_msg.orientation_covariance[0] = 0.01  # Variance for roll
-        new_msg.orientation_covariance[4] = 0.01  # Variance for pitch
+        new_msg.orientation_covariance[0] = 1000  # Variance for roll
+        new_msg.orientation_covariance[4] = 1000  # Variance for pitch
         new_msg.orientation_covariance[8] = 0.01  # Variance for yaw
 
         # Angular Velocity Covariance (v_roll, v_pitch, v_yaw)
