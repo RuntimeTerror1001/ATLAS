@@ -3,7 +3,7 @@
     # Core EKF Parameters
     frequency: 50.0 # Filter update rate (Hz)
     sensor_timeout: 0.1 
-    two_d_mode: false
+    two_d_mode: true 
 
     # Frame Configuration
     #map_frame: map 
@@ -57,7 +57,7 @@
     # IMU Configuration (imu0)
     imu0: /atlas/imu
     imu0_config: [false, false, false,  # x, y, z position (don't use from IMU)
-                  true, true, true, # roll, pitch, yaw orientation
+                  true, true, false, # roll, pitch, yaw orientation
                   false, false, false, # x, y, z velocity
                   true, true, true, # roll, pitch, yaw angular velocity
                   false, false, false] # x, y, z linear acceleration
@@ -70,7 +70,7 @@
     # Wheel Odometry Configuration (odom0)
     odom0: /atlas/robotnik_base_controller/odometry
     odom0_config: [false,  false,  false,  # x, y position (use), z (ignore for wheeled robot)
-                   false, false, false,   # roll, pitch (ignore), yaw (use)
+                   false, false, true,   # roll, pitch (ignore), yaw (use)
                    true,  true,  false,  # x, y velocity (use), z velocity (ignore)
                    false, false, true,   # roll, pitch angular velocity (ignore), yaw (use)
                    false, false, false]  # linear acceleration (don't use from odometry)

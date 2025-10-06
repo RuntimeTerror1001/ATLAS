@@ -61,7 +61,7 @@
             diagnostics_msg_.status[0].name = "EKF Transform (odom -> " + base_frame_ + ")";
             diagnostics_msg_.status[0].hardware_id = "atlas_state_estimation";
             
-            diagnostics_msg_.status[1].name = "SLAM Transform (map -> odom)";
+            diagnostics_msg_.status[1].name = "SLAM Transform (robot_map -> odom)";
             diagnostics_msg_.status[1].hardware_id = "atlas_state_estimation";
             
             RCLCPP_INFO(this->get_logger(), "TF Health Check node initialized successfully");
@@ -77,7 +77,7 @@
         checkTransform("robot_odom", base_frame_, 0, true);
         
         // Check map -> odom transform (optional, provided by SLAM)
-        checkTransform("map", "robot_odom", 1, false);
+        checkTransform("robot_map", "robot_odom", 1, false);
         
         // Publish diagnostics
         diagnostics_pub_->publish(diagnostics_msg_);

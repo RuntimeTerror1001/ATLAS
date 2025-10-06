@@ -113,6 +113,7 @@ def generate_launch_description():
         executable="parameter_bridge",
         name="parameter_bridge",
         output="screen",
+        parameters=[{'lazy': True}],
         arguments=[
             # Clock
             '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
@@ -134,29 +135,29 @@ def generate_launch_description():
             '/atlas/imu/data@sensor_msgs/msg/Imu@ignition.msgs.IMU',
 
             # World Cameras
-            '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
-            '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
-            '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
+            # '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
+            # '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
+            # '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
 
-            '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
-            '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
-            '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
+            # '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
+            # '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
+            # '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
 
-            '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
-            '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
-            '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
+            # '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
+            # '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
+            # '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
 
-            '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
-            '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
-            '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
+            # '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_imu/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU',
+            # '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
+            # '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/image@sensor_msgs/msg/Image@ignition.msgs.Image',
+            # '/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
         ],
         remappings=[
             ('/atlas/front_camera_color/color/image_raw', '/atlas/front_camera/color/image'),
@@ -194,42 +195,7 @@ def generate_launch_description():
             ('/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/points', '/warehouse/camera_3/depth/points'),
         ]
     )
-    """
-/clock
-/gazebo/resource_paths
-/gui/camera/pose
-/sensors/marker
-/stats
-/world/warehouse/clock
-/world/warehouse/dynamic_pose/info
 
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_imu/imu
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/camera_info
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/depth_image
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/image
-/world/warehouse/model/realsense_mount_0/link/camera_link/sensor/realsense_mount_0_rgbd/points
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_imu/imu
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/camera_info
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/depth_image
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/image
-/world/warehouse/model/realsense_mount_1/link/camera_link/sensor/realsense_mount_1_rgbd/points
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_imu/imu
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/camera_info
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/depth_image
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/image
-/world/warehouse/model/realsense_mount_2/link/camera_link/sensor/realsense_mount_2_rgbd/points
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_imu/imu
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/camera_info
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/depth_image
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/image
-/world/warehouse/model/realsense_mount_3/link/camera_link/sensor/realsense_mount_3_rgbd/points
-/world/warehouse/pose/info
-/world/warehouse/scene/deletion
-/world/warehouse/scene/info
-/world/warehouse/state
-/world/warehouse/stats
-
-    """
     # ---------------- Controller spawners ----------------
     # Controller manager lives under the same namespace as the robot nodes.
     manager_path = [TextSubstitution(text="/"), namespace, TextSubstitution(text="/controller_manager")]
