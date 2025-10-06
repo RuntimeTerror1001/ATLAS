@@ -11,6 +11,7 @@ def generate_launch_description():
     # Package paths
     atlas_bringup_share = get_package_share_directory('atlas_bringup')
     atlas_state_estimation_share = get_package_share_directory('atlas_state_estimation')
+    atlas_slam_sahre  = get_package_share_directory('atlas_slam')
     
     # Launch arguments
     sim_arg = DeclareLaunchArgument(
@@ -86,6 +87,21 @@ def generate_launch_description():
             )
         ]
     )
+
+    # 3. SLAM Launch 
+    slam_group = GroupAction(
+        actions=[
+            PushRosNamespace(LaunchConfiguration('namespace')),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([
+                    atlas_slam_sahre, '/launch/slam_rtabmap.launch.py'
+                ]),
+                launch_arguments={
+                    'base_frame': LaunchConfiguration('base_frame')
+                }.items()
+            )
+        ]
+    )
     
     # Future launch includes (commented for now):
     
@@ -137,6 +153,7 @@ def generate_launch_description():
         # Launch includes
         sim_launch,                    # Phase 1: Simulation
         state_estimation_group,        # Phase 2: State Estimation
+        slam_group
         # navigation_launch,           # Phase 3: Navigation (future)
         # manipulation_launch,         # Phase 4: Manipulation (future)  
         # perception_launch,           # Phase 5: Perception (future)
