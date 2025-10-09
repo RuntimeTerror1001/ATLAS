@@ -1,0 +1,37 @@
+/**:
+  ros__parameters:
+    # Topics
+    rgb_topic: "/atlas/front_camera/color/image"
+    depth_topic: "/atlas/front_camera/depth/image"
+    camera_info_topic: "/atlas/front_camera/color/camera_info"
+    
+    # Depth conversion
+    depth_scale: 1.0  
+    
+    color_names: ["blue", "purple"]
+
+    # HSV color thresholds
+    color_ranges:
+      blue:
+        lower: [95, 70, 70]
+        upper: [125, 255, 255]
+      purple:
+        lower: [125, 70, 70]
+        upper: [160, 255, 255]
+    
+    # Morphological operations
+    morph_open_iters: 1
+    
+    # Contour filtering
+    min_contour_area_px: 400.0
+    
+    # Depth filtering
+    depth_min_m: 0.05
+    depth_max_m: 10.0
+    
+    # Visualization
+    debug_markers: true
+    publish_debug_images: false
+    
+    # Detection behavior
+    detection_timeout_s: 2.0

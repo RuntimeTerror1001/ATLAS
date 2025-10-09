@@ -1,0 +1,9 @@
+string shape_type
+string frame_id_out
+---
+geometry_msgs/PoseStamped object_pose
+string detected_shape
+float32 confidence
+int32 marker_id
+---
+string status_text

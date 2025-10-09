@@ -13,6 +13,7 @@ def generate_launch_description():
     atlas_state_estimation_share = get_package_share_directory('atlas_state_estimation')
     atlas_slam_share  = get_package_share_directory('atlas_slam')
     atlas_nav_share = get_package_share_directory('atlas_navigation')
+    atlas_perception_share = get_package_share_directory('atlas_perception')
     
     # Launch arguments
     sim_arg = DeclareLaunchArgument(
@@ -114,6 +115,18 @@ def generate_launch_description():
             )
         ]
     )
+
+    # 5. Perception Launch
+    perception_group = GroupAction(
+        actions=[
+            PushRosNamespace(LaunchConfiguration('namespace')),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([
+                    atlas_perception_share, '/launch/atlas_perception.launch.py'
+                ])
+            )
+        ]
+    )
       
     # 4. Manipulation Launch (Phase 4) 
     # manipulation_launch = IncludeLaunchDescription(
@@ -152,7 +165,6 @@ def generate_launch_description():
         sim_launch,                    # Phase 1: Simulation
         state_estimation_group,        # Phase 2: State Estimation
         slam_group,                    # Phase 3: SLAM 
-        nav_group                      # Phase 4: Navigation
-        # manipulation_launch,         # Phase 4: Manipulation (future)  
-        # perception_launch,           # Phase 5: Perception (future)
+        nav_group,                     # Phase 4: Navigation
+        perception_group,              # Phase 5: Perception
     ])
