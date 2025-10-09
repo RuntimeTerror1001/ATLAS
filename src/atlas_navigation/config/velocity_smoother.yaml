@@ -1,0 +1,10 @@
+/**:
+  ros__parameters:
+    robot_base_frame: robot_base_footprint
+    odom_frame: robot_odom
+    global_frame: robot_map
+    smoothing_frequency: 20.0
+    scale_velocities: true
+    feedback: "OPEN_LOOP"
+    max_velocity: [1.0, 0.0, 1.5]
+    min_velocity: [0.0, 0.0, 0.0]

@@ -1,0 +1,18 @@
+/**:
+  ros__parameters:
+    robot_base_frame: robot_base_footprint
+    odom_frame: robot_odom
+    global_frame: robot_map
+    controller_plugins: ["FollowPath"]
+    controller_frequency: 20.0
+    odom_topic: "/atlas/odometry/filtered"
+    cmd_vel_topic: "/atlas/robotnik_base_controller/reference_unstamped"
+    FollowPath:
+      plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
+      desired_linear_vel: 0.6
+      min_linear_velocity: 0.05
+      max_angular_accel: 2.0
+      lookahead_distance: 0.7
+      transform_tolerance: 0.2
+      use_velocity_scaled_lookahead_distance: true
+      use_collision_detection: true

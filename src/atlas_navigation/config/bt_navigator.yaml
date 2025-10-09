@@ -1,0 +1,9 @@
+/**:
+  ros__parameters:
+    robot_base_frame: robot_base_footprint
+    odom_frame: robot_odom
+    global_frame: robot_map
+    default_bt_xml_filename: "nav2_bt_navigator/navigate_w_replanning_and_recovery.xml"
+    enable_groot_monitoring: false
+    groot_zmq_publisher_port: 1666
+    groot_zmq_server_port: 1667
