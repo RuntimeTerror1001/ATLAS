@@ -1,0 +1,128 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Enabled: true
+      Cell Size: 1
+      Plane: XY
+
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: true
+      Frame Timeout: 5
+      Show Arrows: false
+      Show Axes: false
+      Show Names: false
+
+    - Class: rviz_default_plugins/RobotModel
+      Name: Robot
+      Enabled: false            # turn on only when needed
+      Visual Enabled: true
+      Collision Enabled: false
+      Description Topic: /atlas/robot_description
+
+    # Global map from RTAB-Map
+    - Class: rviz_default_plugins/Map
+      Name: RTABMap Projected Map
+      Enabled: true
+      Topic: /atlas/map
+      Alpha: 0.7
+      Color Scheme: map
+      Draw Behind: true
+      Use Timestamp: false
+
+    # Costmaps (to see obstacles / inflation)
+    - Class: rviz_default_plugins/Map
+      Name: Global Costmap
+      Enabled: true
+      Topic: /atlas/global_costmap/costmap
+      Alpha: 0.5
+      Color Scheme: costmap
+      Draw Behind: true
+
+    - Class: rviz_default_plugins/Map
+      Name: Local Costmap
+      Enabled: true
+      Topic: /atlas/local_costmap/costmap
+      Alpha: 0.7
+      Color Scheme: costmap
+      Draw Behind: false
+
+    # Paths
+    - Class: rviz_default_plugins/Path
+      Name: Planner Plan
+      Enabled: true
+      Topic: /atlas/plan
+      Buffer Length: 200
+      Line Style: Lines
+      Line Width: 0.03
+
+    - Class: rviz_default_plugins/Path
+      Name: Received Global Plan
+      Enabled: true
+      Topic: /atlas/received_global_plan
+      Buffer Length: 200
+      Line Style: Lines
+      Line Width: 0.02
+
+    - Class: rviz_default_plugins/Path
+      Name: Local Path
+      Enabled: true
+      Topic: /atlas/local_path
+      Buffer Length: 200
+      Line Style: Lines
+      Line Width: 0.03
+
+    # Footprint helps debug local planner clearance
+    - Class: rviz_default_plugins/Polygon
+      Name: Robot Footprint
+      Enabled: true
+      Topic: /atlas/local_costmap/published_footprint
+
+    # Lightweight obstacle view (use scans, not point clouds)
+    - Class: rviz_default_plugins/LaserScan
+      Name: Front Laser
+      Enabled: true
+      Topic: /atlas/front_lidar/scan
+      Queue Size: 5
+      Style: Points
+      Size (m): 0.03
+
+    - Class: rviz_default_plugins/LaserScan
+      Name: Rear Laser
+      Enabled: false              # enable if you need it
+      Topic: /atlas/rear_lidar/scan
+      Queue Size: 5
+      Style: Points
+      Size (m): 0.03
+
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: robot_map
+    Frame Rate: 20
+
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/SetGoal
+      Topic: /atlas/goal_pose
+    - Class: rviz_default_plugins/SetInitialPose
+      Topic: /atlas/initialpose
+
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 15
+      Focal Point: {X: 0, Y: 0, Z: 0}
+      Pitch: 0.6
+      Yaw: 0.8
+      Name: Orbit
+      Target Frame: robot_map

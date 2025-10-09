@@ -123,5 +123,5 @@ def generate_launch_description():
     return LaunchDescription([
         base_frame_arg, odom_frame_arg, map_frame_arg,
         rgb_topic_arg, depth_topic_arg, caminfo_topic_arg, scan_cloud_topic_arg,
-        rgbd_sync, rgbd_odom, rtabmap, rviz
+        rgbd_sync, rgbd_odom, rtabmap, #rviz
     ])
